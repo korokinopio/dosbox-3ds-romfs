@@ -63,7 +63,7 @@ void Cross::GetPlatformConfigDir(std::string& in) {
 	in = "~/Library/Preferences";
 	ResolveHomedir(in);
 #elif defined(__3DS__)
-	in = "sdmc:/3ds/DOSBox";
+	in = "romfs:/DOSBox";
 	ResolveHomedir(in);
 #else
 	in = "~/.dosbox";
@@ -93,7 +93,7 @@ void Cross::CreatePlatformConfigDir(std::string& in) {
 	ResolveHomedir(in);
 	//Don't create it. Assume it exists
 #elif defined(__3DS__)
-	in = "sdmc:/3ds/DOSBox";
+	in = "romfs:/DOSBox";
 	ResolveHomedir(in);
 	mkdir(in.c_str(),0700);
 #else
